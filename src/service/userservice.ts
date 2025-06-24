@@ -26,7 +26,7 @@ export class Userservice {
   
 public deleteUser(id: number): Observable<void> {
 
-  return this.http.delete<void>(`http://localhost:8080/api/users/users/${id}`);
+  return this.http.delete<void>(`http://localhost:8080/api/users/delete/${id}`);
 }
 
 }
