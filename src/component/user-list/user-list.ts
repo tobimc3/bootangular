@@ -27,4 +27,19 @@ export class UserList implements OnInit {
       }
     });
   }
+
+  deleteUser(id: number): void {
+  console.log('id is' + id);  
+  if (confirm('Are you sure you want to delete this user?')) {
+    this.userService.deleteUser(id).subscribe({
+      next: () => {
+        this.users = this.users.filter(user => user.id !== id);
+      },
+      error: (err) => {
+        console.error('Delete failed', err);
+      }
+    });
+  }
+}
+
 }

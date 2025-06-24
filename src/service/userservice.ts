@@ -20,8 +20,13 @@ export class Userservice {
 
   public save(user: User) {
     return this.http.post<User>(this.usersUrl, user);
+
   }
 
   
+public deleteUser(id: number): Observable<void> {
+
+  return this.http.delete<void>(`http://localhost:8080/api/users/users/${id}`);
+}
 
 }
